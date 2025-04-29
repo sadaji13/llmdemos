@@ -58,9 +58,9 @@ Worcester,12431,19632,139,184,342,153,32881`;
     let statewidePercentagesHTML = '<h2>Statewide Percentages</h2><ul>';
     candidateNames.forEach(name => {
         const percentage = ((statewideTotals[name] / statewideTotalVotes) * 100).toFixed(2);
-        statewidePercentagesHTML += `<li>${name}: ${percentage}% (${statewideTotals[name]} votes)</li>`;
+        statewidePercentagesHTML += `<li>${name}: ${percentage}% (${statewideTotals[name].toLocaleString()} votes)</li>`;
     });
-    statewidePercentagesHTML += `<li><strong>Total Votes: ${statewideTotalVotes}</strong></li></ul>`;
+    statewidePercentagesHTML += `<li><strong>Total Votes: ${statewideTotalVotes.toLocaleString()}</strong></li></ul>`;
     statewidePercentagesDiv.innerHTML = statewidePercentagesHTML;
 
     // Populate the county dropdown
@@ -81,12 +81,12 @@ Worcester,12431,19632,139,184,342,153,32881`;
             let countyPercentagesHTML = `<h3>${selectedCounty} Percentages</h3><ul>`;
             candidateNames.forEach(name => {
                 const percentage = ((county.votes[name] / county.total) * 100).toFixed(2);
-                countyPercentagesHTML += `<li>${name}: ${percentage}% (${county.votes[name]} votes)</li>`;
+                countyPercentagesHTML += `<li>${name}: ${percentage}% (${county.votes[name].toLocaleString()} votes)</li>`;
             });
-            countyPercentagesHTML += `<li><strong>Total Votes: ${county.total}</strong></li></ul>`;
+            countyPercentagesHTML += `<li><strong>Total Votes: ${county.total.toLocaleString()}</strong></li></ul>`;
             countyPercentagesDiv.innerHTML = countyPercentagesHTML;
         } else {
-            countyPercentagesDiv.innerHTML = '<p>Select a county to see candidate percentages.</p>';
+            countyPercentagesDiv.innerHTML = '<p class="placeholder">Select a county to see candidate percentages.</p>';
         }
     });
 });
