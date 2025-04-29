@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maryland Election Results</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Maryland Election Results</h1>
 
+        <div id="statewide-totals">
+            <h2>Statewide Totals</h2>
+            <p>Loading statewide totals...</p>
+        </div>
+
+        <div id="county-selection">
+            <h2>County Breakdown</h2>
+            <label for="county-dropdown">Select a County:</label>
+            <select id="county-dropdown">
+                <option value="">-- Select a County --</option>
+            </select>
+            <div id="county-percentages">
+                <p>Select a county to see candidate percentages.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
